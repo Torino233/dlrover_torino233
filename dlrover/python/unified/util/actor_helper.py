@@ -23,7 +23,6 @@ from typing import (
     Iterable,
     List,
     Optional,
-    ParamSpec,
     Protocol,
     Tuple,
     TypeVar,
@@ -32,6 +31,10 @@ from typing import (
     overload,
 )
 
+try:
+    from typing import ParamSpec
+except ImportError:  # < 3.10
+    from typing_extensions import ParamSpec
 import ray
 from ray.actor import ActorClass, ActorHandle
 from ray.exceptions import (

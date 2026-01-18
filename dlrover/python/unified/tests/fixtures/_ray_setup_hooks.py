@@ -13,7 +13,7 @@
 
 import os
 from pathlib import Path
-from typing import Callable, Dict
+from typing import Callable, Dict, Union
 
 from dlrover.python.unified.util.test_hooks import coverage_enabled
 from dlrover.python.util.reflect_util import import_callable
@@ -58,7 +58,7 @@ def get_args():
     }
 
 
-def inject_hook(*hooks: str | Callable) -> Dict[str, str]:
+def inject_hook(*hooks: Union[str, Callable]) -> Dict[str, str]:
     """Inject a custom hook callable into the environment."""
 
     def to_str(hook: Callable | str) -> str:

@@ -1,6 +1,6 @@
-ARG PY_VERSION=3.8.14
-ARG PY_TAG
-ARG VERSION
+﻿ARG PY_VERSION=3.8.14
+ARG PY_TAG=py38
+ARG VERSION="0.6.0.dev0"
 
 FROM ghcr.io/intelligent-machine-learning/dlrover_dev_${PY_TAG}:master AS builder
 
@@ -8,7 +8,7 @@ WORKDIR /dlrover
 COPY ./ .
 RUN sh scripts/build_wheel.sh
 
-FROM python:${PY_VERSION} AS base
+FROM docker.1ms.run/python:${PY_VERSION} AS base
 
 ARG VERSION
 

@@ -1,6 +1,6 @@
 module github.com/intelligent-machine-learning/dlrover/go/elasticjob
 
-go 1.23.4
+go 1.20
 
 require (
 	github.com/go-logr/logr v1.2.0

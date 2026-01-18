@@ -1,15 +1,15 @@
-# Build the image of examples using the dockerfile.
+﻿# Build the image of examples using the dockerfile.
 # We need to make the data directory data/ with the dataset of
 # nanogpt, mnist and llama2 before building the image.
 # The details to prepare data are in the `README` of examples.
 
-FROM easydl/dlrover:ci as builder
+FROM docker.1ms.run/easydl/dlrover:ci as builder
 
 WORKDIR /dlrover
 COPY ./ .
 RUN sh scripts/build_wheel.sh
 
-FROM python:3.8.14 as base
+FROM python:3.10.19 as base
 
 WORKDIR /dlrover
 RUN apt-get update && apt-get install -y sudo vim libgl1-mesa-glx libglib2.0-dev
