@@ -1,4 +1,4 @@
-# Copyright 2025 The DLRover Authors. All rights reserved.
+﻿# Copyright 2025 The DLRover Authors. All rights reserved.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -13,7 +13,7 @@
 
 import os
 from pathlib import Path
-from typing import Callable, Dict, Union
+from typing import Callable, Dict
 
 from dlrover.python.unified.util.test_hooks import coverage_enabled
 from dlrover.python.util.reflect_util import import_callable
@@ -58,8 +58,8 @@ def get_args():
     }
 
 
-def inject_hook(*hooks: Union[str, Callable]) -> Dict[str, str]:
-    """Inject a custom hook callable into the environment."""
+def inject_hook(*hooks: str | Callable) -> Dict[str, str]:
+"""Inject a custom hook callable into the environment."""
 
     def to_str(hook: Callable | str) -> str:
         if isinstance(hook, str):
