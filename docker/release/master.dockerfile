@@ -1,6 +1,6 @@
 ﻿ARG PY_VERSION=3.8.14
-ARG PY_TAG=py38
-ARG VERSION="0.6.0.dev0"
+ARG PY_TAG
+ARG VERSION
 
 FROM ghcr.io/intelligent-machine-learning/dlrover_dev_${PY_TAG}:master AS builder
 

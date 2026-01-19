@@ -3,7 +3,7 @@
 # nanogpt, mnist and llama2 before building the image.
 # The details to prepare data are in the `README` of examples.
 
-FROM docker.1ms.run/easydl/dlrover:ci as builder
+FROM easydl/dlrover:ci as builder
 
 WORKDIR /dlrover
 COPY ./ .

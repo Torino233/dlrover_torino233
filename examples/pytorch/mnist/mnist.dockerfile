@@ -1,10 +1,10 @@
-﻿FROM docker.1ms.run/easydl/dlrover:ci AS builder
+﻿FROM easydl/dlrover:ci as builder
 
 WORKDIR /dlrover
 COPY ./ .
 RUN sh scripts/build_wheel.sh
 
-FROM docker.1ms.run/easydl/dlrover-train:torch201-cpu-py38  AS base
+FROM easydl/dlrover-train:torch201-cpu-py38  as base
 
 WORKDIR /dlrover
 
