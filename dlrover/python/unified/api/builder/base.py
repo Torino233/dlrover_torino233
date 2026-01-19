@@ -324,7 +324,7 @@ def parse_args_ray(args):
         "--node-check",
         "--network-check",
         "--network_check",
-        action='store_false',
+        action='store_true',
         help="Whether to check node before starting training process.",
     )
     parser.allow_abbrev = False

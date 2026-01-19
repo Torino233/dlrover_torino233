@@ -1,4 +1,4 @@
-# Copyright 2025 The DLRover Authors. All rights reserved.
+﻿# Copyright 2025 The DLRover Authors. All rights reserved.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -132,7 +132,7 @@ class ApiTest(BaseTest):
 
         for workload in dl_job.workloads.values():
             if workload.backend == "elastic":
-                self.assertEqual(workload.comm_pre_check, False)
+                self.assertEqual(workload.comm_pre_check, True)
 
         self.assertEqual(dl_job.node_num, 2)
         self.assertEqual(dl_job.device_per_node, 2)
